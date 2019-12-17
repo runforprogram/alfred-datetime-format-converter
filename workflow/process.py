@@ -24,6 +24,7 @@ def parse_query_value(query_str):
                 query_str = int(query_str)/int('1000')
             try:
                 d = epoch(float(query_str))
+                d = d.shift("Asia/Shanghai")
             except ValueError:
                 d = parse(str(query_str))
     except (TypeError, ValueError):
